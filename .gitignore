@@ -37,3 +37,6 @@ Thumbs.db
 
 spec.md
 DESIGN.md
+
+*.zip
+*.sha256
