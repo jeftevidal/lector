@@ -35,16 +35,20 @@ if not defined CLI_FOUND (
   )
 )
 
-if not exist ".venv\Scripts\python.exe" (
+if not exist "%~dp0.venv\Scripts\python.exe" (
   echo Criando ambiente local...
-  python -m venv .venv
+  python -m venv "%~dp0.venv"
   if errorlevel 1 goto install_error
 )
 echo Instalando o programa, dependencias e ferramentas de teste...
-.venv\Scripts\python.exe -m pip install --upgrade pip
+"%~dp0.venv\Scripts\python.exe" -m pip install --upgrade pip
 if errorlevel 1 goto install_error
-.venv\Scripts\python.exe -m pip install -e ".[dev]"
-if errorlevel 1 goto install_error
+"%~dp0.venv\Scripts\python.exe" -m pip install -e ".[dev]"
+if errorlevel 1 (
+  echo Tentando instalacao padrao sem dependencias de teste...
+  "%~dp0.venv\Scripts\python.exe" -m pip install -e .
+  if errorlevel 1 goto install_error
+)
 echo Instalacao concluida. Abra lector.bat para a interface web ou traduzir.bat para o assistente CLI.
 pause
 exit /b 0

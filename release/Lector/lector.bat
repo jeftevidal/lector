@@ -2,4 +2,5 @@
 setlocal
 cd /d "%~dp0"
 call "%~dp0iniciar servidor.bat" %*
+exit /b %ERRORLEVEL%
 

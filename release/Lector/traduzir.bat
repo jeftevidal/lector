@@ -8,13 +8,13 @@ if not exist "%INPUT%" (
   pause
   exit /b 1
 )
-if not exist ".venv\Scripts\python.exe" (
+if not exist "%~dp0.venv\Scripts\python.exe" (
   echo ERRO: o programa ainda nao foi instalado. Execute instalar.bat primeiro.
   pause
   exit /b 1
 )
 echo Abrindo o assistente interativo de traducao.
-.venv\Scripts\python.exe -m epub_translate.cli "%INPUT%" --interactive --glossary "%~dp0glossary.json"
+"%~dp0.venv\Scripts\python.exe" -m epub_translate.cli "%INPUT%" --interactive --glossary "%~dp0glossary.json"
 if errorlevel 1 (
   echo ERRO: a traducao nao foi concluida. Consulte o relatorio ao lado do EPUB.
   pause

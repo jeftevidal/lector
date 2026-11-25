@@ -3,7 +3,9 @@ setlocal
 cd /d "%~dp0"
 
 set "TARGET_DIR="
-if exist "%~dp0epub-translate-0.3.0\iniciar servidor.bat" (
+if exist "%~dp0Lector\iniciar servidor.bat" (
+  set "TARGET_DIR=%~dp0Lector"
+) else if exist "%~dp0epub-translate-0.3.0\iniciar servidor.bat" (
   set "TARGET_DIR=%~dp0epub-translate-0.3.0"
 ) else (
   for /d %%D in ("%~dp0epub-translate-*") do (
@@ -12,10 +14,12 @@ if exist "%~dp0epub-translate-0.3.0\iniciar servidor.bat" (
 )
 
 if not defined TARGET_DIR (
-  echo ERRO: Nao foi possivel localizar a pasta do projeto epub-translate.
+  echo ERRO: Nao foi possivel localizar a pasta do projeto Lector.
   pause
   exit /b 1
 )
 
 cd /d "%TARGET_DIR%"
 call ".\iniciar servidor.bat" %*
+exit /b %ERRORLEVEL%
+
