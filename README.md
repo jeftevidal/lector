@@ -1,6 +1,6 @@
 # Lector (v0.3.0)
 
-Local EPUB translator and web app (`epub_translate`) with multi-CLI provider support, translation memory cache, glossary, and QA verification.
+Local EPUB translator with multi-CLI provider support, translation memory cache, glossary, and QA verification.
 
 ## Quick Start (Windows)
 
