@@ -1,10 +1,6 @@
-# Lector (`epub-translate` 0.2.0)
+# Lector (`v0.3.0`)
 
-<<<<<<< HEAD
-Local EPUB translator with multi-CLI provider support, translation memory cache, glossary, and QA verification.
-=======
 Tradutor local de livros EPUB para português (`pt-BR`) com interface web e assistente de terminal, usando CLIs de IA instalados no seu computador. O arquivo original nunca é alterado.
->>>>>>> be216b7 (docs: use release/LEIA-ME.md as root README.md)
 
 ---
 
