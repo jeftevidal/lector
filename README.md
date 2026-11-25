@@ -198,10 +198,6 @@ node --check epub_translate\web_static\app.js
 ![Tela principal do Lector](assets/screenshots/home.png)
 
 ### Glossário, Lotes, Provedores e Revisão
-| Glossário | Lotes |
-|---|---|
-| ![Glossário](assets/screenshots/glossario.png) | ![Lotes](assets/screenshots/lotes.png) |
-
-| Provedores | Revisão |
-|---|---|
-| ![Provedores](assets/screenshots/provedores.png) | ![Revisão](assets/screenshots/revisao.png) |
+| Glossário | Lotes | Revisão |
+|---|---|---|
+| ![Glossário](assets/screenshots/glossario.png) | ![Lotes](assets/screenshots/lotes.png) | ![Revisão](assets/screenshots/revisao.png) |
