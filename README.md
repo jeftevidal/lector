@@ -1,3 +1,5 @@
+![Lector](assets/cover.png)
+
 # Lector (`v0.3.0`)
 
 Tradutor local de livros EPUB para português (`pt-BR`) com interface web e assistente de terminal, usando CLIs de IA instalados no seu computador.
