@@ -188,4 +188,4 @@ A suíte automatizada conta com 60 testes e usa fixtures isoladas (`tests/confte
 node --check epub_translate\web_static\app.js
 ```
 
-Documentação técnica da arquitetura: [lector.md](file:///D:/_docs/knut/03-projects/lector/lector.md).
+
