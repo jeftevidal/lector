@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lector — tradução local de EPUB</title><link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<main class="app-shell" id="app-shell">
+  <header class="page-header"><h1>Traduza um livro inteiro, localmente.</h1><div class="header-actions"><button class="secondary" id="simulate">Apenas simular</button><button class="primary" id="start" disabled>Iniciar tradução</button></div></header>
+  <section class="columns">
+    <article class="card" id="book-card"><h2>Livro</h2>
+      <label class="dropzone" id="dropzone"><input id="file" type="file" accept=".epub,application/epub+zip" hidden><strong id="filename">Solte um EPUB aqui</strong><span id="bookmeta">ou clique para escolher um arquivo</span><button class="link" id="choose" type="button">Trocar arquivo</button></label>
+      <div class="lang-row"><div class="field">Origem<div class="dd" id="source-dd" data-dd="source"></div><select id="source-lang" hidden></select></div><span class="arrow" aria-hidden="true">→</span><div class="field">Destino<div class="static-pill">Português (pt-BR)</div><input type="hidden" id="target-lang" value="pt-BR"></div></div>
+      <label class="toggle-row"><span><b>Só conteúdo principal</b><small>Índice e capítulos</small></span><input type="checkbox" class="switch" id="main-only" checked></label>
+      <footer><span><b>Glossário</b> <span class="muted" id="term-count">0 termos</span></span><button class="link" data-open="glossario-detalhes">Editar</button></footer></article>
+    <article class="card" id="engine-card"><h2>Motor</h2>
+      <div class="field-label">Provedor (CLI)</div><div id="provider-list" class="provider-list" role="radiogroup" aria-label="Provedor (CLI)"></div>
+      <div class="field-label">Modelo</div><div id="model-list" class="model-list" role="radiogroup" aria-label="Modelo"></div><input id="custom-model" placeholder="Digite o nome do modelo" hidden>
+      <div class="field fallback">Se a cota acabar<div class="dd" id="fallback-dd" data-dd="fallback"></div></div>
+      <div class="spacer"></div>
+      <label class="toggle-row has-tip" data-tip="Ligado: reaproveita traduções já feitas do mesmo trecho, mesmo com outro modelo ou provedor, sem gastar cota. Desligado: só reaproveita o que foi feito com o mesmo modelo; ao trocar de modelo, tudo é traduzido de novo."><span><b>Reaproveitar cache</b></span><input type="checkbox" class="switch" id="reuse-cache" checked></label>
+      <label class="toggle-row has-tip" data-tip="Depois de traduzir, os trechos incertos (marcados pelo modelo, ou com termo do glossário ou número divergente) passam por uma segunda revisão do modelo. Gasta um pouco de cota. Desligado: eles só aparecem na Revisão para você conferir."><span><b>Revisar incertos ao final</b></span><input type="checkbox" class="switch" id="review-uncertain" checked></label>
+      <label class="toggle-row has-tip" data-tip="Mostra a porcentagem de cota usada de claude e codex, lida dos mesmos endereços que os próprios CLIs usam. Usa o login que você já fez neles (só leitura, nada é gravado ou enviado a terceiros). Esses endereços não são documentados e podem mudar; usar o login fora do CLI pode contrariar os termos do provedor. Desligado por padrão."><span><b>Cota oficial dos provedores</b></span><input type="checkbox" class="switch" id="official-usage"></label>
+      <footer><span><b>Lotes</b> <span class="muted" id="batch-summary">60 segmentos - 600 s</span></span><button class="link" data-open="lotes-detalhes">Ajustar</button></footer></article>
+    <article class="card" id="preview-card"><h2>Prévia</h2>
+      <div class="metrics"><div class="metric"><strong id="segments">—</strong><span>segmentos</span></div><div class="metric"><strong id="calls">~—</strong><span>chamadas</span></div></div>
+      <div class="cache-block"><b>Cache</b><p class="muted" id="cache-summary">Carregue um EPUB para inspecionar.</p></div>
+      <div class="spacer"></div>
+      <footer><span><b>Revisão</b> <span class="muted" id="review-summary">0 pendências</span></span><button class="link" data-open="revisao-detalhes">Revisar</button></footer></article>
+  </section>
+  <section class="status-row" id="status-row" tabindex="0"></section>
+</main>
+<div class="backdrop" id="backdrop" aria-hidden="true"><div class="stage" id="stage"><section class="modal" id="modal" role="dialog" aria-modal="true"><div id="modal-content"></div></section></div></div>
+<script src="/static/app.js" defer></script>
+</body></html>

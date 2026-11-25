@@ -1,0 +1,33 @@
+[project]
+name = "epub-translate"
+version = "0.3.0"
+description = "Traduz EPUBs preservando a marcação com CLIs locais e interface interativa."
+requires-python = ">=3.11"
+dependencies = [
+    "lxml>=5.0",
+    "rich>=13.0",
+    "questionary>=2.0",
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx2>=0.1"]
+
+[project.scripts]
+epub-translate = "epub_translate.cli:main"
+lector-web = "epub_translate.web:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["epub_translate*"]
+
+[tool.setuptools.package-data]
+epub_translate = ["prompt.md", "web_static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

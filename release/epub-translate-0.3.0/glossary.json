@@ -1,0 +1,50 @@
+{
+  "note": "Edite os termos deste arquivo para orientar as traducoes. Este campo e apenas uma anotacao.",
+  "target_lang": "pt-BR",
+  "source_lang": "en",
+  "tone": "didatico, tratar o leitor por 'voce'",
+  "main_content_only": true,
+  "keep_in_source": [],
+  "translate_map": {},
+  "never_translate": [
+    "nomes proprios",
+    "nomes de fontes tipograficas",
+    "titulos de obras",
+    "codigo",
+    "URLs",
+    "siglas"
+  ],
+  "skip_files": [],
+  "dont_descend": [
+    "code",
+    "pre",
+    "script",
+    "style"
+  ],
+  "block_tags": [
+    "p",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "li",
+    "td",
+    "th",
+    "caption",
+    "figcaption",
+    "blockquote",
+    "dt",
+    "dd"
+  ],
+  "translatable_attrs": [
+    "alt",
+    "title"
+  ],
+  "ignore_attr_values": {
+    "alt": [
+      "image"
+    ]
+  }
+}

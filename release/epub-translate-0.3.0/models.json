@@ -1,0 +1,48 @@
+{
+  "providers": {
+    "claude": {
+      "binary": "claude",
+      "models": [
+        "sonnet",
+        "opus",
+        "haiku"
+      ],
+      "batch_segments": 60,
+      "batch_words": 2000,
+      "timeout": 600
+    },
+    "codex": {
+      "binary": "codex",
+      "models": [
+        "gpt-5-codex",
+        "gpt-5"
+      ],
+      "batch_segments": 40,
+      "batch_words": 1600,
+      "timeout": 900
+    },
+    "agy": {
+      "binary": "agy",
+      "models": [
+        "gemini-3.8-flash-medium",
+        "gemini-4-hydrogen-medium",
+        "claude-sonnet-4-6",
+        "claude-opus-4-6-thinking"
+      ],
+      "batch_segments": 40,
+      "batch_words": 1600,
+      "timeout": 600
+    },
+    "ollama": {
+      "binary": "ollama",
+      "models": [
+        "qwen2.5:14b",
+        "llama3.1:8b"
+      ],
+      "batch_segments": 20,
+      "batch_words": 1000,
+      "timeout": 900,
+      "max_workers": 1
+    }
+  }
+}

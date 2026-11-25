@@ -1,0 +1,10 @@
+{
+  "provider": "agy",
+  "model": "gemini-3.8-flash-medium",
+  "target_lang": "pt-BR",
+  "reuse_cache": true,
+  "batch_mode": "less",
+  "fallback": "agy|gemini-4-hydrogen-medium",
+  "review_uncertain": true,
+  "official_usage": false
+}
