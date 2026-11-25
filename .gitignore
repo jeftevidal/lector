@@ -34,3 +34,6 @@ last_job.json
 # OS / Editor artifacts
 .DS_Store
 Thumbs.db
+
+spec.md
+DESIGN.md
