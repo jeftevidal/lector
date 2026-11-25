@@ -1,7 +1,6 @@
 # Lector (`v0.3.0`)
 
-Tradutor local de livros EPUB para português (`pt-BR`) com interface web e assistente de terminal, usando CLIs de IA instalados no seu computador. O arquivo original nunca é alterado.
-
+Tradutor local de livros EPUB para português (`pt-BR`) com interface web e assistente de terminal, usando CLIs de IA instalados no seu computador.
 ---
 
 ## O que este programa faz
